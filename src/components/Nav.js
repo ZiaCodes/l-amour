@@ -3,9 +3,9 @@ import AbsLogo from '../assets/favicon.png';
 import {RiFeedbackLine} from 'react-icons/ri';
 const AmPm = (num) =>{
     if(num>=12 || num<=23){
-        return "AM";
-    }else{
         return "PM";
+    }else{
+        return "AM";
     }
 }
 
@@ -16,7 +16,7 @@ const getdate = () =>{
     const Todaydate = `${(Math.abs((date.getHours())-12))}:${date.getMinutes()} ${AmPm(date.getHours())} • ${Days[date.getDay()]},${Months[date.getMonth()]} ${date.getDate()}` ;
     return Todaydate;
 }
-
+setInterval(getdate, 1000);
 const Nav = () => {
   return (
     <div style={{
